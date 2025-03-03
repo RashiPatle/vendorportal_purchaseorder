@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Dialog id="similarUnitsId" title="{i18n>unitDetails}">
+        <f:SimpleForm editable="true" id="form0" layout="ResponsiveGridLayout">
+            <Label id="_IDGenLabel1" text="{i18n>dimensions}"/>
+            <Input id="_IDGenInput" type="Number" value="" required="true"/>
+            <Input id="_IDGenInput1" type="Number" value="" required="true"/>
+            <Input id="_IDGenInput2" type="Number" value="" required="true"/>
+            <ComboBox id="dimensionsUnitId" showSecondaryValues="true" enabled="{FreightUnitEditFlag}" required="true" >
+                <core:ListItem id="_IDGenListItem1" key="{UnitOfMeasure}" text="{UnitOfMeasure}" additionalText="{UnitOfMeasure_Text}"/>
+            </ComboBox>
+            <Label id="_IDGenLabel" text="{i18n>weight}"/>
+            <Input id="_IDGenInput3" type="Number" value="" required="true"/>
+            <ComboBox id="weightUnitId" showSecondaryValues="true" enabled="{FreightUnitEditFlag}" required="true">
+                <core:ListItem id="_IDGenListItem2" key="{WeightUnit}" text="{WeightUnit}" additionalText="{WeightUnit_Text}"/>
+            </ComboBox>
+            <Label id="_IDGenLabel6" text="{i18n>packageQty}"/>
+            <Input id="quantitylId" type="Number" value=""/>
+        </f:SimpleForm>
+        <beginButton>
+            <Button id="_IDGenButton" text="{i18n>accept}" type="Accept" press="onPressSavePack"/>
+        </beginButton>
+        <endButton>
+            <Button id="_IDGenButton3" text="{i18n>reject}" type="Reject" press="onPressCancelPack"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

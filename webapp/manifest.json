@@ -1,0 +1,162 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "com.iherb.tm.ztmvpsiherb",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.16.3",
+      "toolsId": "d7bd3ccc-9a2e-4330-8d23-879056df8c3f"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUI_FUITEMLIST/",
+        "type": "OData",
+        "settings": {
+          "annotations": ["ZUI_FUITEMLIST_VAN"],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "ZUI_FUITEMLIST_VAN": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_FUITEMLIST_VAN',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/ZUI_FUITEMLIST_VAN.xml"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "z_purchaseorder-display": {
+          "semanticObject": "z_purchaseorder",
+          "action": "display",
+          "title": "{{z_purchaseorder-display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "fullWidth": true,
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.25",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.iherb.tm.ztmvpsiherb.i18n.i18n"
+        }
+      },
+      "POTableModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+           
+        }
+      },
+      "PkgModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+          
+        }
+      },
+      "PartnerModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+          
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+            "defaultBindingMode": "TwoWay"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.iherb.tm.ztmvpsiherb.view",
+        "async": true,
+        "viewPath": "com.iherb.tm.ztmvpsiherb.view"
+      },
+      "routes": [
+        {
+          "name": "RoutePOtable",
+          "pattern": ":?query:",
+          "target": ["TargetPOtable"]
+        }
+      ],
+      "targets": {
+        "TargetPOtable": {
+          "id": "POtable",
+          "name": "POtable"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.iherb.tm.ztmvpsiherb.view.App",
+      "type": "XML",
+      "id": "App"
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "comiherbtmztmvpsiherb"
+  }
+}

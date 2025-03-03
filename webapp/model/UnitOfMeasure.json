@@ -1,0 +1,29 @@
+{
+    "DimenUnitOfMeasure":[
+        {
+            "Key":1,
+            "Unit":"CM",
+            "Desciption":"Centimeter"
+        },
+        {
+            "Key":2,
+            "Unit":"FT",
+            "Desciption":"Foot"
+        },
+        {
+            "Key":3,
+            "Unit":"DM",
+            "Desciption":"Decimeter"
+        },
+        {
+            "Key":4,
+            "Unit":" ",
+            "Desciption":"inch"
+        },
+        {
+            "Key":5,
+            "Unit":"M",
+            "Desciption":"Meter"
+        }
+    ]
+}
