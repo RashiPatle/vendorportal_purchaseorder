@@ -1,29 +1,59 @@
 <core:FragmentDefinition xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
-    <Dialog id="similarUnitsId" title="{i18n>unitDetails}">
-        <f:SimpleForm editable="true" id="form0" layout="ResponsiveGridLayout">
-            <Label id="_IDGenLabel1" text="{i18n>dimensions}"/>
-            <Input id="_IDGenInput" type="Number" value="" required="true"/>
-            <Input id="_IDGenInput1" type="Number" value="" required="true"/>
-            <Input id="_IDGenInput2" type="Number" value="" required="true"/>
-            <ComboBox id="dimensionsUnitId" showSecondaryValues="true" enabled="{FreightUnitEditFlag}" required="true" >
-                <core:ListItem id="_IDGenListItem1" key="{UnitOfMeasure}" text="{UnitOfMeasure}" additionalText="{UnitOfMeasure_Text}"/>
-            </ComboBox>
-            <Label id="_IDGenLabel" text="{i18n>weight}"/>
-            <Input id="_IDGenInput3" type="Number" value="" required="true"/>
-            <ComboBox id="weightUnitId" showSecondaryValues="true" enabled="{FreightUnitEditFlag}" required="true">
-                <core:ListItem id="_IDGenListItem2" key="{WeightUnit}" text="{WeightUnit}" additionalText="{WeightUnit_Text}"/>
-            </ComboBox>
-            <Label id="_IDGenLabel6" text="{i18n>packageQty}"/>
-            <Input id="quantitylId" type="Number" value=""/>
-        </f:SimpleForm>
-        <beginButton>
-            <Button id="_IDGenButton" text="{i18n>accept}" type="Accept" press="onPressSavePack"/>
-        </beginButton>
-        <endButton>
-            <Button id="_IDGenButton3" text="{i18n>reject}" type="Reject" press="onPressCancelPack"/>
-        </endButton>
+    <Dialog id="similarUnitsId" title="{i18n>packDetails}">
+        <content>
+            <VBox class="sapUiSmallMargin" id="formContainer">
+                <form:SimpleForm editable="true" id="cFragmentMyform" layout="ResponsiveGridLayout" columnsM="2" columnsL="2" columnsXL="2">
+                    <form:content>
+                        <Label id="_IDGenLabel20" text="{i18n>confipackageQty}"/>
+                        <ComboBox id="_IDGenComboBox1" showSecondaryValues="true" required="true"/>
+                        <Label id="_IDGenLabel6" text="{i18n>packageQty}"/>
+                        <Input id="inputPackQty" type="Number" required="true"/>
+                        <Label id="_IDGenLabel1" text="{i18n>packageType}"/>
+                        <ComboBox id="inputPackType" showSecondaryValues="true" required="true"/>
+                        <Label id="_IDGenLabel9" text="{i18n>dimensions}"/>
+                        <Input id="inputLength" type="Number" required="true">
+                        </Input>
+                        <Input id="inputWidth" type="Number" required="true">
+                        </Input>
+                        <Input id="inputHeight" type="Number" required="true">
+                        </Input>
+                        <ComboBox id="inputDimUnitId" showSecondaryValues="true" required="true">
+                            <layoutData>
+                                <form:ColumnElementData id="_IDGenColumnElementData" cellsSmall="2" cellsLarge="1"/>
+                            </layoutData>
+                        </ComboBox>
+                        <Label id="_IDGenLabel10" text="{i18n>weight}"/>
+                        <Input id="inputWeight" type="Number" required="true"/>
+                        <ComboBox id="InputWeightUnit" showSecondaryValues="true" required="true">
+                            <layoutData>
+                                <form:ColumnElementData id="_IDGenColumnElementData1" cellsSmall="2" cellsLarge="1"/>
+                            </layoutData>
+                        </ComboBox>
+                        <Label id="_IDGenLabel22" text="{i18n>packageid}"/>
+                        <Input id="_IDGenInput" type="Number" required="true"/>
+                        <core:Title id="_IDGenTitle2" text="{i18n>pickUpDetails}"/>
+                        <Label id="_IDGenLabel11" text="{i18n>pickupLoc}"/>
+                        <Select id="inputLoc" required="true"/>
+                        <Label id="_IDGenLabel18" text="{i18n>pickupdate}"/>
+                        <DatePicker id="inputDate" valueFormat="MM/dd/yyyy HH:mm" displayFormat="MM/dd/yyyy HH:mm" required="true"/>
+                    </form:content>
+                    <form:title>
+                        <core:Title text="{i18n>poDetails}" id="title15"/>
+                    </form:title>
+                </form:SimpleForm>
+            </VBox>
+        </content>
+        <footer>
+            <Toolbar id="_IDGenToolbar">
+                <content>
+                	<ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                    <Button id="_IDGenButton" text="{i18n>accept}" type="Accept" press="onPressSavePack"/>
+                    <Button id="_IDGenButton3" text="{i18n>reject}" type="Reject" press="onPressCancelPack"/>
+                </content>
+            </Toolbar>
+        </footer>
     </Dialog>
 </core:FragmentDefinition>

@@ -198,14 +198,14 @@
                 </t:template>
             </t:Column>
             <!-- Pick up Location -->
-            <t:Column id="_IDGenColumn19" width="15rem" sortProperty="DesLocIdTrq" filterProperty="DesLocIdTrq">
+            <t:Column id="_IDGenColumn19" width="15rem" sortProperty="SrcLoc" filterProperty="SrcLoc">
                 <t:customData>
-                    <core:CustomData key="p13nData" value='{"columnKey": "DesLocIdTrq", "leadingProperty": "DesLocIdTrq"}'/>
+                    <core:CustomData key="p13nData" value='{"columnKey": "SrcLoc", "leadingProperty": "SrcLoc"}'/>
                 </t:customData>
                 <m:Label id="_IDGenLabel19" text="{i18n>pickupLoc}"  />
                 <t:template>
-                    <m:ComboBox id="_IDGenComboBox20" width="300px" items="{PartnerModel>/}" selectedKey="{Partner}" value="{LocDescr}"  editable="{FreightUnitEditFlag}">
-                        <core:ListItem id="_IDGenListItem20" key="{PartnerModel>LocDescr}" text="{PartnerModel>LocDescr}" />
+                    <m:ComboBox id="_IDGenComboBox20" width="300px" items="{path:'PartnerModel>/'}" editable="{FreightUnitEditFlag}">
+                    <core:Item id="_IDGenListItem20" key="{Partner}" text="{PartnerModel>LocDescr}"></core:Item>
                     </m:ComboBox>
                 </t:template>
             </t:Column>
